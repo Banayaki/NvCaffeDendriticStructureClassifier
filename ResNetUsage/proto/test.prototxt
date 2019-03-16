@@ -1,22 +1,19 @@
 layer {
   name: "data"
-  type: "Data"
+  type: "ImageData"
   top: "data"
   top: "label"
   include {
     phase: TEST
   }
   transform_param {
-    mirror: false
     crop_size: 224
-    mean_value: 104.0
-    mean_value: 117.0
-    mean_value: 123.0
+    scale: 0.003921568859368563
   }
-  data_param {
-    source: "data/test_lmbd"
-    batch_size: 64
-    backend: LMDB
+  image_data_param {
+    source: "resources/train.txt"
+    batch_size: 8
+    is_color: false
   }
 }
 layer {
@@ -2143,7 +2140,7 @@ layer {
   bottom: "pool5"
   top: "classifier"
   inner_product_param {
-    num_output: 1000
+    num_output: 10
   }
 }
 layer {

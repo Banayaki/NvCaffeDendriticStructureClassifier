@@ -8,11 +8,11 @@ def save_proto(proto, prototxt):
 
 if __name__ == '__main__':
     
-    model = resnet.ResNet('/data/train_lmbd', 'data/test_lmbd', 1000)
+    model = resnet.ResNet('resources/train.txt', 'resources/test.txt', 50)
 
-    train_proto = model.resnet_layers_proto(64)
+    train_proto = model.resnet_layers_proto(8)
 
-    test_proto = model.resnet_layers_proto(64, phase='TEST')
+    test_proto = model.resnet_layers_proto(8, phase='TEST')
 
     save_proto(train_proto, 'proto/train.prototxt')
 

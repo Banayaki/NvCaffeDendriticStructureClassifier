@@ -1,0 +1,18 @@
+train_net:"proto/lenet_auto_train.prototxt"
+test_net:"proto/lenet_auto_test.prototxt"
+
+test_iter:500
+test_interval:1000
+base_lr:0.0001
+lr_policy:"inv"
+gamma:0.0001
+power:0.75
+
+weight_decay:0.0005
+rms_decay:0.999
+
+display:100
+max_iter:100000
+snapshot_prefix:"somenet_68"
+snapshot:100000
+solver_mode: GPU

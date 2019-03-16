@@ -1,0 +1,17 @@
+train_net:"proto/train.prototxt"
+test_net:"proto/test.prototxt"
+
+test_iter:100
+test_interval:1000
+base_lr:0.1
+lr_policy:"inv"
+power:0.75
+gamma:0.0001
+
+weight_decay:0.0001
+rms_decay:0.999
+
+display:500
+max_iter:350000  
+
+solver_mode: GPU
